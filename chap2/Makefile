@@ -2,7 +2,7 @@ AS = arm-none-eabi-as
 LD = arm-none-eabi-ld
 LDFRAGS = -T ../raspbian.lds -m armelf
 
-.PHONY: clean copy-mov clean
+.PHONY: clean copy-mov test
 mov: mov.o
 	$(LD) $(LDFRAGS) $+ -o $@
 
