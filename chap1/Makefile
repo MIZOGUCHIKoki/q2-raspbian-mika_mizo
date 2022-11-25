@@ -1,4 +1,4 @@
-AS = arm-none-eabi-as
+AS = arm-none-eabi-as 
 LD = arm-none-eabi-ld
 LDFRAGS = -T ../raspbian.lds -m armelf
 
@@ -7,7 +7,7 @@ hello: hello.o
 	$(LD) $(LDFRAGS) $+ -o $@
 
 %.o: %.s
-	$(AS) $<
+	$(AS) $< -o $@
 
 copy-hello: hello
 	scp $< 172.21.43.173:
