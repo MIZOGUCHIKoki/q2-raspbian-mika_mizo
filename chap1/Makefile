@@ -13,4 +13,4 @@ copy-hello: hello
 	scp $< 172.21.43.173:
 
 clean:
-	rm -f *.o *~ *.out 
+	rm -f *.o *~ *.out hello
