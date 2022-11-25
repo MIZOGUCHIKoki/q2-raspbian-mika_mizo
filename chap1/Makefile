@@ -2,7 +2,7 @@ AS = arm-none-eabi-as
 LD = arm-none-eabi-ld
 LDFRAGS = -T ../raspbian.lds -m armelf
 
-.PHONY: clean test copy-hello
+.PHONY: clean copy-hello
 hello: hello.o
 	$(LD) $(LDFRAGS) $+ -o $@
 
@@ -14,7 +14,3 @@ copy-hello: hello
 
 clean:
 	rm -f *.o *~ *.out 
-
-test:	hello
-	./$+ | cat -v
-
