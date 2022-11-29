@@ -14,8 +14,9 @@ LDFRAGS = -T ../raspbian.lds -m armelf
 
 %.o: %.o
 
-mizo: mov
-	scp $< 172.21.43.173:
+
+mov_mizo: hms
+	scp $< 250373b@172.21.43.173:
 
 mika: abs
 	scp $< 172.21.43.172:
