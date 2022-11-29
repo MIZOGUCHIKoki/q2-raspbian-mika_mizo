@@ -2,8 +2,8 @@
   .global  _start
 
 _start:
-  mov r1, #12356
-  mov r2, #3600
+  ldr r1, =12356
+  ldr r2, =3600
   mov r3, #60 
   
   @; A div B = Q mod R <=> R = A - BQ
