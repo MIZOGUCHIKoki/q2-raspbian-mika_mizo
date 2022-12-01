@@ -4,11 +4,16 @@ LDFRAGS = -T ../raspbian.lds -m armelf
 
 .PHONY: clean mov_mizo mov_mika
 
+%: %.s
+
 %: %.o
 	$(LD) $(LDFRAGS) $+ -o $@
 
 %.o: %.s
 	$(AS) $< -o $@
+
+%.o: %.o
+
 
 mov_mizo: hms
 	scp $< 250373b@172.21.43.173:
