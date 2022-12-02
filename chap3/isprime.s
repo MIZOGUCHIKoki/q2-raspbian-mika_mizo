@@ -1,4 +1,4 @@
-	.equ N, 3
+	.equ N, 29
 	
 	.section .text
 	.global _start
@@ -16,7 +16,7 @@ loop0:
 	b loop0
 
 loop1:
-	cmp r2, #1
+	cmp r2, #2
 	beq prime
 	udiv r4, r1, r2
 	mul r5, r2, r4
