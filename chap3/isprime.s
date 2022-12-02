@@ -11,8 +11,8 @@ _start:
 loop0:
 	mul r3, r2, r2
 	cmp r1, r3
-	add r2, r2, #1
 	bls loop1
+	add r2, r2, #1
 	b loop0
 
 loop1:
