@@ -25,11 +25,11 @@ loop1:
 	sub r2, r2, #1
 	b loop1
 
-prime:	mov r8, #1
+prime:	mov r8, #0
 	b end
 
 notprime:
-	mov r8, #0
+	mov r8, #1
 	b end
 
 end:
