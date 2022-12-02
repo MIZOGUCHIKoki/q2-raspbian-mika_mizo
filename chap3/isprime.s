@@ -17,12 +17,13 @@ loop0:
 	b loop0
 
 loop1:
-	udiv r4, r1, r3
-	mul r5, r3, r4
+	cmp r2, #1
+	beq prime
+	udiv r4, r1, r2
+	mul r5, r2, r4
 	subs r6, r1, r5
 	beq notprime
-	subs r3, r3, #2
-	beq prime
+	sub r2, r2, #1
 	b loop1
 
 prime:	mov r8, #1
