@@ -8,7 +8,7 @@ _start:
   cmp r1, #0
 
   beq endp
-  cmp r2, #1
+  cmp r1, #1
   beq endp
 
   mov r0, #1
