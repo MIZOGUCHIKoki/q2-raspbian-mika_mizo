@@ -22,4 +22,4 @@ mika: abs
 	scp $< 172.21.43.172:
 
 clean:
-	rm -f *.o *~ *.out mov 123 hms abs
+	rm -f *.o *~ *.out fib13 isprime nprime
