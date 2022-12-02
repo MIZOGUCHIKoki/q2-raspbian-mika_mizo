@@ -3,7 +3,6 @@
 
 _start:
   mov r1, #1  @; n-1
-  mov r2, #0  @; n-2
   mov r3, #13 @; n
 calc:
   subs  r3, #1
