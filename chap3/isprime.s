@@ -10,7 +10,7 @@ _start:
 	ldr r2, =N
 	mov r0, #1
 
-@loop0:
+@loop0: 高速化を狙った処理
 	@mul r3, r2, r2
 	@cmp r1, r3
 	@add r2, r2, #1
