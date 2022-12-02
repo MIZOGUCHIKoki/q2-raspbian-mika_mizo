@@ -1,4 +1,4 @@
-  .equ  N,  0
+  .equ  N,  2
   .section  .text
   .global   _start
 
@@ -7,9 +7,8 @@ _start:
   mov r0, #0
   cmp r1, #0
 
-  beq endp
-  cmp r2, #1
-  beq endp
+  cmp r1, #1
+  bls endp
 
   mov r0, #1
   add r1, r1, #1
