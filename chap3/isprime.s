@@ -1,4 +1,4 @@
-	.equ N, 29
+	.equ N, 3
 	
 	.section .text
 	.global _start
@@ -7,12 +7,11 @@
 _start:
 	ldr r1, =N
 	mov r2, #1
-	mov r3, #1
 
 loop0:
+	mul r3, r2, r2
 	cmp r1, r3
 	bls loop1
-	mul r3, r2, r2
 	add r2, r2, #1
 	b loop0
 
