@@ -4,11 +4,12 @@
 
 _start:
   ldr r10,=N  @; 入力数値
-  mov r0, #10 @; 割る数
+  mov r9, #10 @; 割る数
   mov r2, #1  @; 桁数
   mov r6, r10
 countK: @; 桁数Counter
-  udiv  r3, r10,  r0    @;  1932 / 10 = 193
+  mov   r4, #0
+  udiv  r3, r10,  r9    @;  1932 / 10 = 193
   cmp   r3, #0
   addne r2, r2, #1      @;  桁数++
   movne r10,r3
@@ -18,9 +19,9 @@ countK: @; 桁数Counter
 writeProcess:
   ldr   r1,   =buf+99  @; r1 = buf + ndigit - 1 末尾番地(Return)
 wloop:
-  udiv  r4, r6,  r0  @; N / 10 = r4
+  udiv  r4, r6,  r9  @; N / 10 = r4
   @; A divid by B = R mod Q <=> A - BR = Q
-  mul   r5, r0,   r4  @; BR
+  mul   r5, r9,   r4  @; BR
   sub   r5, r6,  r5  @; r5 = N % 10
   add   r5, r5,   #'0'
   strb  r5, [r1], #-1      @;  [r1] <- r5 (0拡張); r2--
