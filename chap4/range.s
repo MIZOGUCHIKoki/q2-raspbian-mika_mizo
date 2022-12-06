@@ -3,7 +3,8 @@
 
 _start:
 	ldr r1, =N
-	mov r2, #ndata
+	ldr r2, =ndata
+	ldr r9, [r2]
 	ldr r3, =data1
 
 loop0:
@@ -12,7 +13,7 @@ loop0:
 	sub r6, r5, r4, asr #31  @r6 = abs
 	cmp r1, r6
 	addpl r8, r8, #1
-	subs r2, r2, #1
+	subs r9, r9, #1
 	beq end
 	add r3, r3, #4
 	b loop0
@@ -27,5 +28,5 @@ end:
 
 	.section .data
 data1:	.word 0, -1, -123, 54, 39
-.equ    ndata, 5
+ndata:	.word 5
 .equ    N, 40
