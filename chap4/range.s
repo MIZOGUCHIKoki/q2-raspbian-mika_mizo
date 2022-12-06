@@ -11,15 +11,13 @@ loop0:
 	eor r5, r4, r4, asr #31
 	sub r6, r5, r4, asr #31  @r6 = abs
 	cmp r1, r6
-	addcs r8, r8, #1
+	addcs r0, r0, #1
 	subs r2, r2, #1
-	beq end
 	add r3, r3, #4
-	b loop0
+	bne loop0
 
 end:
 	mov r7, #1
-	mov r0, r8
 	swi #0
 	
 	
