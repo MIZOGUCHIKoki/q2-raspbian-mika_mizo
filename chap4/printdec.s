@@ -1,5 +1,4 @@
   .equ  N,  3128
-  .equ  ndigit, 100
   .section  .text
   .global   _start
 
@@ -18,7 +17,7 @@ countK: @; 桁数Counter
 @; r2  :: 桁数
 @; r6 :: 入力数値
 writeProcess:
-  ldr   r1,   =buf+ndigit-1  @; r1 = buf + ndigit - 1 末尾番地(Return)
+  ldr   r1,   =buf+99  @; r1 = buf + ndigit - 1 末尾番地(Return)
 wloop:
   udiv  r4, r6,  r0  @; N / 10 = r4
   @; A divid by B = R mod Q <=> A - BR = Q
@@ -41,5 +40,5 @@ endp:
   swi #0
 
   .section  .data
-buf:  .space ndigit  @;  100Byte
+buf:  .space 100  @;  100Byte
       .ascii "\n"    @;  Return Code
