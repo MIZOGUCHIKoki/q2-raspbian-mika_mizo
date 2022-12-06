@@ -6,6 +6,7 @@ _start:
 	ldr r2, =ndata
 	ldr r9, [r2]
 	ldr r3, =data1
+	mov r8, #0
 
 loop0:
 	ldr r4, [r3]
@@ -27,6 +28,6 @@ end:
 
 
 	.section .data
-data1:	.word -1, -123, 54, 39, 32, -39, -2000
-ndata:	.word 7
-.equ    N, 1235
+data1:	.word -1, -123, 54, 39, 32, -2147483647
+ndata:	.word 6
+.equ    N, 2147483646
