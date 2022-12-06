@@ -7,7 +7,7 @@ _start:
   ldr r10,=N  @; 入力数値
   mov r0, #10 @; 割る数
   mov r2, #1  @; 桁数
-
+  mov r6, r10
 countK: @; 桁数Counter
   mov   r4, #0
   udiv  r3, r10,  r0    @;  1932 / 10 = 193
@@ -18,17 +18,16 @@ countK: @; 桁数Counter
 @; r2  :: 桁数
 @; r10 :: 入力数値
 writeProcess:
-  ldr   r10,  =N
   ldr   r1,   =buf+ndigit-1  @; r1 = buf + ndigit 末尾番地
   @;sub   r1, r1, #1         @; Return Code space
 wloop:
-  udiv  r4, r10,  r0  @; N / 10 = r4
+  udiv  r4, r6,  r0  @; N / 10 = r4
   @; A divid by B = R mod Q <=> A - BR = Q
   mul   r5, r0,   r4  @; BR
-  sub   r5, r10,  r5  @; r5 = N % 10
+  sub   r5, r6,  r5  @; r5 = N % 10
   add   r5, r5,   #'0'
   strb  r5, [r1], #-1      @;  [r1] <- r5 (0拡張); r2--
-  mov   r10,r4
+  mov   r6,r4
   cmp   r4, #0
   bne   wloop
   
