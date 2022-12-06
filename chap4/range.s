@@ -2,7 +2,7 @@
 	.global _start
 
 _start:
-	ldr r1, =N
+	ldrsb r1, =N
 	ldr r2, =ndata
 	ldr r9, [r2]
 	ldr r3, =data1
@@ -27,6 +27,6 @@ end:
 
 
 	.section .data
-data1:	.word 0, -1, -123, 54, 39
-ndata:	.word 5
+data1:	.word 0, -1, -123, 54, 39, 32, 40
+ndata:	.word 7
 .equ    N, 40
