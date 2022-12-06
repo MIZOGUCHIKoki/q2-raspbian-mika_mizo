@@ -4,7 +4,7 @@
 _start:
 	ldr r1, =N
 	ldr r2, =ndata
-	ldrsb r9, [r2]
+	ldrb r9, [r2]
 	ldr r3, =data1
 
 loop0:
