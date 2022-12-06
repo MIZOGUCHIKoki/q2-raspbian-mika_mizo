@@ -27,6 +27,6 @@ end:
 
 
 	.section .data
-data1:	.word 0, -1, -123, 54, 39, 32, -39
-ndata:	.word 7
+data1:	.byte 0, -1, -123, 54, 39, 32, -39
+ndata:	.byte 7
 .equ    N, 40
