@@ -8,7 +8,6 @@ _start:
   mov r2, #1  @; 桁数
   mov r6, r10
 countK: @; 桁数Counter
-  mov   r4, #0
   udiv  r3, r10,  r0    @;  1932 / 10 = 193
   cmp   r3, #0
   addne r2, r2, #1      @;  桁数++
