@@ -27,6 +27,6 @@ end:
 
 
 	.section .data
-data1:	.word 0, -1, -123, 54, 39, 32, -39
+data1:	.word -1, -123, 54, 39, 32, -39, -1236
 ndata:	.word 7
-.equ    N, 40
+.equ    N, 1235
