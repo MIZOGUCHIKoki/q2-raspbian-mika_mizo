@@ -4,11 +4,11 @@
 _start:
 	ldr r1, =N
 	ldr r2, =ndata
-	ldrb r9, [r2]
+	ldr r9, [r2]
 	ldr r3, =data1
 
 loop0:
-	ldr r4, [r3]
+	ldrsb r4, [r3]
 	eor r5, r4, r4, asr #31
 	sub r6, r5, r4, asr #31  @r6 = abs
 	cmp r1, r6
