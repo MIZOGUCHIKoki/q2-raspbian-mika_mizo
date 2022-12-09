@@ -48,7 +48,6 @@ endp:
   ldr r4, [sp], #4
   ldr r6, [sp], #4
   ldr r7, [sp], #4
-  ldr r8, [sp], #4
   bx  r14         @;  back to test.s
 
   .section  .data
