@@ -20,7 +20,9 @@ push:
 	mov r4, r1
 	mov r5, r2
 
-call: 
+call:
+	sub sp, sp. #4
+	
 	cmp r1, r2
 	bcc end
 	cmp r4, r5
@@ -39,6 +41,7 @@ call:
 	
 	
 end:
+	add sp, sp, #4
 	
 	ldr r1, [sp], #4
 	ldr r2, [sp], #4
