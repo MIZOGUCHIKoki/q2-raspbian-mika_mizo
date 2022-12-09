@@ -24,13 +24,11 @@ call:
 	sub r1, r1, #1
 	sub r2, r2, #1
 	bl call          @S(n-1, g-1)
-	@str r0, [sp, #0]
 	mov r3, r0
 
 
 	add r2, r2, #1
 	bl call          @S(n-1, g)
-	@LDR R3, [SP, #0]
 
 	mul r6, r2, r0
 	add r0, r6, r3
