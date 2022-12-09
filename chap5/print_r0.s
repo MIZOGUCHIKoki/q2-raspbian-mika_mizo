@@ -6,7 +6,6 @@ print_r0:
 operate_stack:
   str r7, [sp, #-4]!
   str r6, [sp, #-4]!
-  str r5, [sp, #-4]!
   str r4, [sp, #-4]!
   str r3, [sp, #-4]!
   str r2, [sp, #-4]!
@@ -28,10 +27,10 @@ writeProcess:
 wloop:
   udiv  r4, r6,  r7        @; N / 10 = r4
   @; A divid by B = R mod Q <=> A - BR = Q
-  mul   r5, r7,   r4       @; BR
-  sub   r5, r6,  r5        @; r5 = N % 10
-  add   r5, r5,   #'0'
-  strb  r5, [r1], #-1      @;  [r1] <- r5 (0拡張); r2--
+  mul   r3, r7,   r4       @; BR
+  sub   r3, r6,  r3        @; r5 = N % 10
+  add   r3, r3,   #'0'
+  strb  r3, [r1], #-1      @;  [r1] <- r5 (0拡張); r2--
   movs  r6, r4
   bne   wloop
   
@@ -47,7 +46,6 @@ endp:
   ldr r2, [sp, #-4]!
   ldr r3, [sp, #-4]!
   ldr r4, [sp, #-4]!
-  ldr r5, [sp, #-4]!
   ldr r6, [sp, #-4]!
   ldr r7, [sp, #-4]!
   ldr r8, [sp, #-4]!
