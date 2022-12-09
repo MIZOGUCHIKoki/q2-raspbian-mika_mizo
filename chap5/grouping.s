@@ -3,7 +3,7 @@
 
 grouping:
 push:	
-	str r13, [sp, #-4]!
+
 	str r12, [sp, #-4]!
 	str r11, [sp, #-4]!
 	str r10, [sp, #-4]!
@@ -17,27 +17,27 @@ push:
 	str r2, [sp, #-4]!
 	str r1, [sp, #-4]!
 
-	ldr r3, r14
-	mov r4, r2
+	mov r4, r1
+	mov r5, r2
 
 call:
-	cmp r1, r4
-	movcc r6, #0
+	cmp r1, r2
 	bcc end
-	cmp r2, #1
-	moveq r5, #1
+	cmp r4, r5
 	bcc end
-	mul r7, r6, r4
-	add r8, r5, r6
 	sub r1, r1, #1
 	sub r2, r2, #1
-	bl call
-	
-	
-	
-	
+	bl call           @S(r1-1, r2-1)
+	str r0, [sp, #0]
 
+	sub r4, r4, #1
+	bl call           @S(r4-1, r5)
+	ldr r6, [sp, #0]
 
+	mul r7, r6, r5
+	add r0, r0, r7
+	
+	
 end:
 	
 	ldr r1, [sp], #4
@@ -52,6 +52,6 @@ end:
 	ldr r10, [sp], #4
 	ldr r11, [sp], #4
 	ldr r12, [sp], #4
-	ldr r13, [sp], #4
-	bx r14
+
+	bx r3
 	
