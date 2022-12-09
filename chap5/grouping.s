@@ -17,6 +17,7 @@ push:
 	str r2, [sp, #-4]!
 	str r1, [sp, #-4]!
 
+	ldr r3, r14
 	mov r4, r1
 	mov r5, r2
 
@@ -53,5 +54,5 @@ end:
 	ldr r11, [sp], #4
 	ldr r12, [sp], #4
 
-	bx r14
+	bx r3
 	
