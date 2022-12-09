@@ -11,8 +11,8 @@ operate_stack:
   str r3, [sp, #-4]!
   str r2, [sp, #-4]!
   str r1, [sp, #-4]!
+  str r0, [sp, #-4]!
 
-  @;ldr r0,=N  @; 入力数値
   mov r7, #10 @; 割る数
   mov r2, #1  @; 桁数
   mov r6, r0
@@ -43,6 +43,7 @@ write:
   swi #0
 
 endp:
+  ldr r0, [sp, #-4]!
   ldr r1, [sp, #-4]!
   ldr r2, [sp, #-4]!
   ldr r3, [sp, #-4]!
