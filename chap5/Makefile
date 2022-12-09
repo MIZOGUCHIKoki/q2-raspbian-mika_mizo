@@ -22,4 +22,4 @@ mika: isprime
 	scp $< 172.21.43.172:
 
 clean:
-	rm -f *.o *~ *.out max range printdec
+	rm -f *.o *~ *.out print_r0 tribo grouping
