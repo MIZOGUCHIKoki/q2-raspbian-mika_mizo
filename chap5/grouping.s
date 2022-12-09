@@ -11,7 +11,6 @@ call:
 	str r3, [sp, #-4]!
 	str r4, [sp, #-4]!
 	str r6, [sp, #-4]!
-	sub sp, sp, #4
 
 	
 	cmp r2, #1
@@ -35,7 +34,6 @@ call:
 
 	
 end:
-	add sp, sp, #4
 	ldr r6, [sp], #4
 	ldr r4, [sp], #4
 	ldr r3, [sp], #4
