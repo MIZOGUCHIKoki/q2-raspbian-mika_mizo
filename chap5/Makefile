@@ -7,7 +7,7 @@ LDFRAGS = -T ../raspbian.lds -m armelf
 %: %.s
 
 %: %.o test.o
-	$(LD) $(LDFRAGS) $+ test.o -o $@
+	$(LD) $(LDFRAGS) $+ -o $@
 
 %.o: %.s
 	$(AS) $< -o $@
