@@ -16,8 +16,9 @@ loop:
   mov r1, r2
   mov r2, r0
   subs  r4, r4, #1
-  bne loop
+  bne   loop
 
 endp:
   mov r7, #1
+  mov r0, #0
   swi #0 
