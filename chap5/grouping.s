@@ -2,8 +2,8 @@
 	.global grouping
 
 grouping:
-push:	
-
+push:
+	str r14, [sp, #-4]!
 	str r12, [sp, #-4]!
 	str r11, [sp, #-4]!
 	str r10, [sp, #-4]!
@@ -17,11 +17,10 @@ push:
 	str r2, [sp, #-4]!
 	str r1, [sp, #-4]!
 
-	ldr r3, r14
 	mov r4, r1
 	mov r5, r2
 
-call:
+call: 
 	cmp r1, r2
 	bcc end
 	cmp r4, r5
@@ -53,6 +52,6 @@ end:
 	ldr r10, [sp], #4
 	ldr r11, [sp], #4
 	ldr r12, [sp], #4
-
+	ldr r14, [sp], #4
 	bx r3
 	
