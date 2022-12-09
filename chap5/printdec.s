@@ -1,15 +1,15 @@
   .equ  N,  3128
   .section  .text
-  .global   print_r0
+  .global   _start
 
-print_r0:
-  ldr r0,=N  @; 入力数値
+_start:
+  ldr r10,=N  @; 入力数値
   mov r9, #10 @; 割る数
   mov r2, #1  @; 桁数
-  mov r6, r0
+  mov r6, r10
 countK: @; 桁数Counter
-  udiv  r3, r0,  r9    @;  1932 / 10 = 193
-  movs r0, r3
+  udiv  r3, r10,  r9    @;  1932 / 10 = 193
+  movs r10, r3
   addne r2, r2, #1      @;  桁数++
   bne   countK
 @; r2  :: 桁数
