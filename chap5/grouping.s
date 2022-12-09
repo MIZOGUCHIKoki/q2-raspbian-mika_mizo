@@ -53,5 +53,5 @@ end:
 	ldr r11, [sp], #4
 	ldr r12, [sp], #4
 	ldr r14, [sp], #4
-	bx r3
+	bx r14
 	
