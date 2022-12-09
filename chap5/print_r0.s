@@ -39,7 +39,6 @@ write:
   add r1, r1, #1  @; 先頭番地
   add r2, r2, #1  @; 桁数
   mov r7, #4
-  mov r0, #1
   swi #0
 
 endp:
