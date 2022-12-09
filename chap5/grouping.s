@@ -4,6 +4,7 @@
 grouping:
 push:
 	str r14, [sp, #-4]!
+	str r13, [sp. #-4]!
 	str r12, [sp, #-4]!
 	str r11, [sp, #-4]!
 	str r10, [sp, #-4]!
@@ -52,6 +53,7 @@ end:
 	ldr r10, [sp], #4
 	ldr r11, [sp], #4
 	ldr r12, [sp], #4
+	ldr r13, [sp], #4
 	ldr r14, [sp], #4
 	bx r14
 	
